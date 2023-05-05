@@ -24,7 +24,7 @@ logic wait getInput sendFrame = go
   where
     go = do
       now <- getCurrentTime
-      let (TimeOfDay h m s) = localTimeOfDay $ utcToLocalTime utc now
+      let (TimeOfDay h m s) = localTimeOfDay $ utcToLocalTime utc −5 now
 
       let display = scale zoom $ map (map colorize) $ framing $
             foldr1 (zipWith (++)) $ map (numbers !!) $ intersperse 10
